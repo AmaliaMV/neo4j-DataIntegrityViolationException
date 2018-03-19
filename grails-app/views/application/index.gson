@@ -1,0 +1,11 @@
+import neo4jSample.core.Club
+
+model {
+	Club club1
+    Club club2
+}
+
+json {
+    club1 g.render(club1)
+    club2 g.render(club2)
+}
