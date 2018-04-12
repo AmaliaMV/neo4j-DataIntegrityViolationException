@@ -1,8 +1,10 @@
 package neo4jSample.core
 
-class Person extends BaseGraphDomain {
+class Player extends BaseGraphDomain {
 
     String name
+
+    static belongsTo = [Club]
 
     static constraints = {
     }

@@ -1,7 +1,8 @@
 package dataintegrity
 
 import neo4jSample.core.Club
-import neo4jSample.core.Person
+import neo4jSample.core.Player
+import neo4jSample.core.President
 import neo4jSample.core.PrivateClub
 
 class BootStrap {
@@ -10,11 +11,12 @@ class BootStrap {
 
         Club.withNewSession {
             Club.withNewTransaction {
+
                 Club club = Club.findByName('Boca Jrs')
 
                 if (!club) {
                     club = new PrivateClub(name: 'Boca Jrs')
-                    club.person = new Person(name: 'Canelo').save()
+                    club.president = new President(name: 'Canelo').save()
                     club.save()
                 }
 
@@ -22,6 +24,7 @@ class BootStrap {
 
                 if (!club) {
                     club = new PrivateClub(name: 'River')
+                    club.addToPlayers(new Player(name: 'Tomy'))
                     club.save()
                 }
             }

@@ -2,9 +2,9 @@ package neo4jSample.core
 
 class PrivateClub extends Club {
 
-    Person person
+    President president
 
     static constraints = {
-        person nullable: true
+        president nullable: true
     }
 }

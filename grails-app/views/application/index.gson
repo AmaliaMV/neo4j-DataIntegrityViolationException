@@ -7,5 +7,8 @@ model {
 
 json {
     club1 g.render(club1)
+    players1 g.render(club1.players)
     club2 g.render(club2)
+    players2 g.render(club2.players)
+
 }
